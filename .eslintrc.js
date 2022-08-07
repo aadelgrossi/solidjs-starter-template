@@ -3,7 +3,11 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['eslint:recommended', 'plugin:solid/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:solid/recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -12,7 +16,7 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module',
   },
-  plugins: ['solid', 'prettier', 'standard'],
+  plugins: ['solid', 'prettier', 'standard', '@typescript-eslint'],
   rules: {
     'prettier/prettier': 'error',
     'solid/jsx-no-undef': 2,
@@ -55,6 +59,7 @@ module.exports = {
       },
     ],
     'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
     'no-prototype-builtins': 'warn',
     'comma-dangle': [
       'error',

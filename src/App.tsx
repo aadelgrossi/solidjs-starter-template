@@ -1,9 +1,19 @@
 import type { Component } from 'solid-js';
 import logo from './logo.svg';
 
-import { Box, Flex, HopeProvider, Image, Text } from '@hope-ui/solid';
+import {
+  Box,
+  Button,
+  Flex,
+  HopeProvider,
+  Icon,
+  Image,
+  Text,
+  VStack,
+} from '@hope-ui/solid';
 import { keyframes } from '@stitches/core';
 
+import { ImBooks } from 'solid-icons/im';
 const logoSpin = keyframes({
   '0%': {
     transform: 'rotate(0deg)',
@@ -34,18 +44,27 @@ const MyApp: Component = () => {
           src={logo}
           alt="logo"
         />
-        <Text mt={40}>
-          Edit <Text as="code">src/App.tsx</Text> and save to reload.
-        </Text>
-        <Text
-          color="$info8"
-          as="a"
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </Text>
+        <VStack mt={40} spacing={10}>
+          <Text
+            fontSize={{
+              '@initial': '$base',
+              '@sm': '$xl',
+              '@md': '$2xl',
+            }}
+          >
+            Edit <Text as="code">src/App.tsx</Text> and save to reload.
+          </Text>
+          <Button
+            leftIcon={<Icon as={ImBooks} />}
+            colorScheme="info"
+            as="a"
+            href="https://github.com/solidjs/solid"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn Solid
+          </Button>
+        </VStack>
       </Flex>
     </Box>
   );
